@@ -1,0 +1,49 @@
+# ActiveFence Pipeline Configuration
+
+# Data Collection Settings
+data_collection:
+  text:
+    sources:
+      - reddit
+      - news_api
+      - wikipedia
+    max_samples: 10000
+    output_format: json
+    output_path: data/raw/text/
+    
+  images:
+    sources:
+      - unsplash
+      - pexels
+      - pixabay
+    max_samples: 10000
+    output_path: data/raw/images/
+    metadata_path: data/raw/images/metadata/
+    
+# Delta Lake Settings
+delta_lake:
+  base_path: data/processed/delta/
+  tables:
+    text_raw: text_raw
+    images_raw: images_raw
+    threat_mappings: threat_mappings
+    text_enriched: text_enriched
+    images_enriched: images_enriched
+    
+# Spark Settings
+spark:
+  app_name: ActiveFence_Pipeline
+  master: local[*]
+  config:
+    spark.sql.extensions: io.delta.sql.DeltaSparkSessionExtension
+    spark.sql.catalog.spark_catalog: org.apache.spark.sql.delta.catalog.DeltaCatalog
+    
+# Streaming Settings
+streaming:
+  checkpoint_base_path: data/processed/checkpoints/
+  trigger_interval: 10  # seconds
+  
+# OCR Settings
+ocr:
+  language: eng
+  config: --oem 3 --psm 6

@@ -1,0 +1,53 @@
+ActiveFence Pipeline - Project Structure
+=======================================
+
+activefence-pipeline/
+│
+├── config/
+│   └── config.yaml              # Central configuration file
+│
+├── data_collection/
+│   ├── __init__.py
+│   ├── text_collector.py        # Collects text from Wikipedia, News, Reddit
+│   └── image_collector.py       # Collects images with metadata
+│
+├── spark/
+│   ├── __init__.py
+│   ├── ingestion/              # Batch ingestion to Delta Lake
+│   │   ├── __init__.py
+│   │   ├── text_ingestion.py
+│   │   ├── image_ingestion.py
+│   │   └── threat_mapping_ingestion.py
+│   │
+│   ├── streaming/              # Real-time enrichment
+│   │   ├── __init__.py
+│   │   ├── text_enrichment_stream.py
+│   │   └── image_enrichment_stream.py
+│   │
+│   └── prepare_tables.py       # Prepare enriched tables for analytics
+│
+├── sql/
+│   ├── analytics_queries.sql   # SQL queries for threat analysis
+│   └── run_analytics.py        # Execute analytics programmatically
+│
+├── mappings/
+│   └── threat_mappings.json    # Threat categories and patterns
+│
+├── docs/
+│   ├── architecture.md         # Detailed architecture documentation
+│   └── ARCHITECTURE.txt        # ASCII architecture diagram
+│
+├── data/                       # Data storage (git ignored)
+│   ├── raw/
+│   │   ├── text/
+│   │   └── images/
+│   └── processed/
+│       ├── delta/
+│       └── checkpoints/
+│
+├── .gitignore
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+├── INSTRUCTIONS.md             # Execution instructions
+├── run_all.sh                  # Complete pipeline execution script
+└── test_pipeline.py            # Component verification script

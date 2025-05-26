@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+
+# Data
+data/
+!data/.gitkeep
+
+# Checkpoints and logs
+checkpoints/
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.parquet
+*.delta/
+analytics_results/

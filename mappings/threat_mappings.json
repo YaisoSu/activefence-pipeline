@@ -1,0 +1,110 @@
+{
+  "threat_categories": {
+    "terrorism": {
+      "description": "Content related to terrorist activities and extremism",
+      "keywords": [
+        "bomb", "explosive", "attack", "terror", "jihad", "ISIS", "Al-Qaeda",
+        "extremist", "radical", "militant", "insurgent", "suicide bomber",
+        "IED", "martyrdom", "caliphate", "infidel", "holy war"
+      ],
+      "patterns": [
+        "plan.*attack", "make.*bomb", "join.*jihad", "kill.*infidels",
+        "terror.*cell", "explosive.*device", "militant.*group"
+      ],
+      "severity_levels": {
+        "high": ["bomb making", "attack planning", "recruitment", "active threat"],
+        "medium": ["propaganda", "extremist ideology", "hate speech"],
+        "low": ["discussion", "news reporting", "academic content"]
+      }
+    },
+    "hacking": {
+      "description": "Cybersecurity threats and hacking activities",
+      "keywords": [
+        "hack", "exploit", "vulnerability", "zero-day", "malware", "ransomware",
+        "phishing", "breach", "backdoor", "trojan", "botnet", "DDoS",
+        "SQL injection", "XSS", "rootkit", "keylogger", "cryptojacking"
+      ],
+      "patterns": [
+        "hack.*system", "exploit.*vulnerability", "steal.*data",
+        "bypass.*security", "crack.*password", "inject.*code"
+      ],
+      "severity_levels": {
+        "high": ["zero-day exploit", "active breach", "ransomware deployment"],
+        "medium": ["vulnerability disclosure", "hacking tools", "phishing attempts"],
+        "low": ["security research", "ethical hacking", "bug bounty"]
+      }
+    },
+    "sexual_abuse": {
+      "description": "Content related to sexual abuse and exploitation",
+      "keywords": [
+        "abuse", "exploitation", "trafficking", "grooming", "predator",
+        "minor", "child", "CSAM", "inappropriate", "assault"
+      ],
+      "patterns": [
+        "groom.*child", "exploit.*minor", "sexual.*abuse",
+        "inappropriate.*content", "trafficking.*victim"
+      ],
+      "severity_levels": {
+        "high": ["active exploitation", "CSAM distribution", "grooming attempts"],
+        "medium": ["suspicious behavior", "inappropriate content", "predatory language"],
+        "low": ["awareness content", "prevention discussion", "support resources"]
+      }
+    },
+    "violence": {
+      "description": "Content promoting or depicting violence",
+      "keywords": [
+        "kill", "murder", "assault", "weapon", "gun", "knife", "violence",
+        "fight", "attack", "shoot", "stab", "beat", "torture", "massacre"
+      ],
+      "patterns": [
+        "plan.*attack", "kill.*people", "shoot.*up", "mass.*shooting",
+        "violent.*threat", "weapon.*attack"
+      ],
+      "severity_levels": {
+        "high": ["direct threats", "attack planning", "weapon acquisition"],
+        "medium": ["violent content", "aggression", "hate speech"],
+        "low": ["news reporting", "fiction", "gaming content"]
+      }
+    },
+    "fraud": {
+      "description": "Financial fraud and scam activities",
+      "keywords": [
+        "scam", "fraud", "phishing", "ponzi", "pyramid", "fake", "counterfeit",
+        "identity theft", "credit card", "money laundering", "wire fraud",
+        "investment scam", "romance scam", "Nigerian prince"
+      ],
+      "patterns": [
+        "get.*rich.*quick", "investment.*opportunity", "verify.*account",
+        "update.*payment", "claim.*prize", "urgent.*transfer"
+      ],
+      "severity_levels": {
+        "high": ["active scam operation", "identity theft", "financial fraud"],
+        "medium": ["phishing attempts", "suspicious offers", "fake websites"],
+        "low": ["scam awareness", "fraud prevention", "educational content"]
+      }
+    },
+    "drugs": {
+      "description": "Illegal drug trade and substance abuse",
+      "keywords": [
+        "drugs", "narcotics", "cocaine", "heroin", "meth", "fentanyl",
+        "dealer", "trafficking", "cartel", "overdose", "synthetic drugs",
+        "dark web", "silk road", "bitcoin drugs"
+      ],
+      "patterns": [
+        "sell.*drugs", "buy.*narcotics", "drug.*dealer", "trafficking.*route",
+        "dark.*web.*market", "crypto.*drugs"
+      ],
+      "severity_levels": {
+        "high": ["drug trafficking", "dealer activity", "distribution network"],
+        "medium": ["drug use", "purchasing attempts", "dark web mentions"],
+        "low": ["addiction support", "harm reduction", "news coverage"]
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-01-26",
+    "author": "ActiveFence Pipeline",
+    "description": "Threat classification mapping for content analysis"
+  }
+}
